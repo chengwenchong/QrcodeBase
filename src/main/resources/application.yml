@@ -1,32 +1,32 @@
-multipart:
-    max-file-size: 5120Mb
-    max-request-size: 5120Mb
+office-path: /usr/lib/libreoffice
+office-port: 8100
+
+file-types: [.txt, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .pdf]
+img-types: [.jpg, .jpeg, .png, .bmp, .svg]
+img-sizes: [80x100, 160x200, 240x300]
 
 server:
     port: 5006
-    
-database:
-    host: localhost
-    port: 3306
-    name: qrcode_demo
 
 spring:
     data:
         mongodb:
             host: 127.0.0.1
             port: 28018
-            username: admin
-            password: admin
             database: qrcode
             grid-fs-database: fbs
-        
+    http:
+        multipart:
+            max-file-size: 5120Mb
+            max-request-size: 5120Mb
+
+#monitor           
+management:
+    port: 8093
+    security:
+        enabled: false        
 
 logging:
     level:
         root: INFO
     file: logs/qrcode-base.log
-
-#rest service configurations(TimeUnit: SECONDS)
-connection-timeout: 10
-read-timeout: 300
-write-timeout: 10
