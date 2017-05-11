@@ -1,4 +1,4 @@
-/****mqsql-mybatis application.yml文件配置*****/
+### mqsql-mybatis application.yml文件配置
 mybatis: 
     mapperLocations: classpath:/com/cheng/base/mappers/*.xml
     typeAliasesPackage: com.cheng.test.domain
